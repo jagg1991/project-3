@@ -1,7 +1,8 @@
 const router = require("express").Router();
-const bookRoutes = require("./books");
+//need to add route
+const routes = require("./");
 
-// need to add routes
-router.use("/",);
+// need to change name when ready
+router.use("/", routes);
 
 module.exports = router;
