@@ -1,4 +1,10 @@
 {
+<<<<<<< HEAD
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+=======
 
   "name": "project-3",
   "version": "0.1.0",
@@ -19,6 +25,7 @@
   "description": "",
   "main": "server.js",
 
+>>>>>>> 3f27574ede1dc2b871e7b7df02d33449982d5bd3
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",

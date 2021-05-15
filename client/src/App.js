@@ -1,4 +1,3 @@
-
 import './App.css';
 import Carousel from './components/carousel';
 import Login from './components/login';
