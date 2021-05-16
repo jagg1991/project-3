@@ -1,8 +1,8 @@
-import './App.css';
-import Carousel from './components/carousel';
-import Login from './components/login';
-import Navbar from './components/navbar';
-import Signup from './components/signup';
+// import './App.css';
+import Carousel from "./components/carousel";
+import Login from "./components/login";
+import Navbar from "./components/navbar";
+import Signup from "./components/signup";
 
 function App() {
   return (
