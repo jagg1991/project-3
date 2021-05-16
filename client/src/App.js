@@ -4,6 +4,8 @@ import Login from './components/login';
 import Navbar from './components/navbar';
 import Signup from './components/signup';
 import { BrowserRouter as Router, Switch } from "react-router-dom";
+import CoinBaseAPI from './components/coinbaseAPI';
+import CoinsAPI from "./components/coins"
 // Route,
 
 function App() {
@@ -15,7 +17,10 @@ function App() {
           <Login />
           <Signup />
           <Carousel />
+
         </Switch>
+        <CoinBaseAPI />
+        <CoinsAPI />
       </div>
     </Router>
   );
