@@ -3,29 +3,32 @@ import React from "react";
 function Signup() {
     return (
         <div className="container">
-            <label for="show" className="close-btn fas fa-times" title="close"></label>
-            <div className="text">
-            </div>
-            <form action="#" className="form login-form">
+
+
+            <form className="form signup-form">
+                <h2>Signup</h2>
                 <div className="data">
-                    <label>Email or Phone</label>
-                    <input id="email-login" type="text" required />
+                    <label for="name-signup">First name:</label>
+                    <input className="form-input" type="text" id="name-signup" />
                 </div>
                 <div className="data">
-                    <label>Password</label>
-                    <input id="password-login" type="password" required />
+                    <label for="name-signup">Last name:</label>
+                    <input className="form-input" type="text" id="name-signup" />
                 </div>
-                <div className="forgot-pass">
-                    <a href="go">Forgot Password?</a>
+                <div className="data">
+                    <label for="email-signup">email:</label>
+                    <input className="form-input" type="text" id="email-signup" />
                 </div>
-                <div className="btn">
-                    <div className="inner">
-                    </div>
-                    <button type="submit">login</button>
+                <div className="data">
+                    <label for="password-signup">password:</label>
+                    <input className="form-input" type="password" id="password-signup" />
                 </div>
-                <div className="signup-link">
-                    Not a member? <a href="/signup">Signup now</a></div>
+
+                <div className="form-group">
+                    <button className="btn btn-primary" type="submit">signup</button>
+                </div>
             </form>
+
         </div>
     )
 }
