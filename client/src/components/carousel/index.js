@@ -2,7 +2,7 @@ import React from "react";
 
 function Carousel() {
     return (
-        <div className="container-sm" >
+        <div className="container" >
             <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -11,13 +11,13 @@ function Carousel() {
                 </div>
                 <div className="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="..." className="d-block w-100" alt="..." />
+                        <img src="https://via.placeholder.com/150" className="d-block w-100" alt="placeholder" />
                     </div>
                     <div className="carousel-item">
-                        <img src="..." className="d-block w-100" alt="..." />
+                        <img src="https://via.placeholder.com/150" className="d-block w-100" alt="placeholder" />
                     </div>
                     <div className="carousel-item">
-                        <img src="..." className="d-block w-100" alt="..." />
+                        <img src="https://via.placeholder.com/150" className="d-block w-100" alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
