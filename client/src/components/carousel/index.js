@@ -1,6 +1,22 @@
-import React from "react";
-import { Carousel, Jumbotron } from "react-bootstrap"
+
+import React, { useEffect, useState } from "react";
+import { Carousel, Jumbotron } from "react-bootstrap";
+import coinsAPI from "../../utils/coinsAPI"
 function Slides() {
+    const [coins, setCoins] = useState([])
+
+    useEffect(() => {
+        async function getCoins() {
+            const coinData = await coinsAPI()
+            coinData.length = 5
+            console.log(coinData)
+            setCoins(coinData)
+        }
+
+        getCoins()
+
+    }, []
+    )
     return (
         <div className="container">
             <Jumbotron >

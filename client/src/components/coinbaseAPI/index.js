@@ -1,24 +1,27 @@
 import React from "react";
-import coinBaseAPI from "../../utils/coinbaseAPI"
+import coinsAPI from "../../utils/coinsAPI"
 
 class CoinBaseAPI extends React.Component {
     state = {
         results: {}
     }
     componentDidMount() {
-        this.searchCoin();
+        coinsAPI()
+
     }
 
-    searchCoin = () => {
-        coinBaseAPI.search()
-            .then(res => this.setState({ results: res.data }))
-            .catch(err => console.log(err));
-    }
+    // searchCoin = () => {
+    //     coinBaseAPI.search()
+    //         .then(res => this.setState({ results: res.data }))
+    //         .catch(err => console.log(err));
+    // }
+
+
 
     render() {
         return (
             <>
-                <div className="container"></div>
+                <div className="container">Hello World</div>
             </>
         )
     }
