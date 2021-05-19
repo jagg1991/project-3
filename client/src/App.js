@@ -2,11 +2,13 @@
 import Slides from './components/carousel';
 
 import Navbar from './components/navbar';
-import Signup from './components/signup';
+import Signup from './pages/signup';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CoinBaseAPI from './components/coinbaseAPI';
 import CoinsAPI from "./components/coins"
-import Login from './components/login';
+import Login from './pages/login';
+import Forgot from './pages/forgot'
+// import ListItem from "./components/ListItem"
 // Route,
 
 function App() {
@@ -17,12 +19,16 @@ function App() {
         <Switch>
           <Route exact path={["/", "/home"]}>
             <Slides />
+            {/* <ListItem /> */}
           </Route>
           <Route exact path={["/login"]}>
             <Login />
           </Route>
           <Route exact path={["/signup"]}>
             <Signup />
+          </Route>
+          <Route exact path={["/forgot"]}>
+            <Forgot />
           </Route>
 
 
