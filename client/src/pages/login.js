@@ -51,7 +51,7 @@ function Login() {
                         <i className="fab fa-facebook-f"><span>Facebook</span></i>
                     </div>
                     <div className="instagram">
-                        <i classNames="fab fa-instagram"><span>Email</span></i>
+                        <i classNames="fab fa-Email"><span>Email</span></i>
                     </div>
                 </div>
                 <div className="signup">
