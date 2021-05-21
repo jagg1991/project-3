@@ -1,15 +1,13 @@
 // import './App.css';
-import Slides from './components/carousel';
-
+// import Slides from './components/carousel';
 import Navbar from './components/navbar';
 import Signup from './pages/signup';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CoinBaseAPI from './components/coinbaseAPI';
-import CoinsAPI from "./components/coins"
 import Login from './pages/login';
-import Forgot from './pages/forgot'
-// import ListItem from "./components/ListItem"
-// Route,
+import Forgot from './pages/forgot';
+import User from "./pages/user"
+import Home from "./pages/home"
+
 
 function App() {
   return (
@@ -18,8 +16,9 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path={["/", "/home"]}>
-            <Slides />
-            {/* <ListItem /> */}
+            {/* <Slides /> */}
+            <Home />
+
           </Route>
           <Route exact path={["/login"]}>
             <Login />
@@ -30,12 +29,15 @@ function App() {
           <Route exact path={["/forgot"]}>
             <Forgot />
           </Route>
+          <Route exact path={["/user"]}>
+            <User />
+          </Route>
 
 
 
         </Switch>
-        <CoinBaseAPI />
-        <CoinsAPI />
+
+        {/* <CoinsAPI /> */}
       </div>
     </Router>
   );
