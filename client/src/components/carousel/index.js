@@ -1,67 +1,64 @@
 
 import React, { useEffect, useState } from "react";
 import { Carousel, Jumbotron } from "react-bootstrap";
-import coinsAPI from "../../utils/coinsAPI"
+import coinsAPI from "../../utils/coinsAPI";
+import Container from "../container"
 function Slides() {
     const [coins, setCoins] = useState([])
 
     useEffect(() => {
         async function getCoins() {
             const coinData = await coinsAPI()
-            coinData.length = 5
+            coinData.length = 10
             console.log(coinData)
             setCoins(coinData)
+            console.log()
         }
 
         getCoins()
 
     }, []
+
     )
     return (
+
         <div className="container">
-            <Jumbotron >
+            <Jumbotron fluid>
+                <h1 style={{ textAlign: "center" }}>Top 10 Cryptocurrenies!</h1>
+                <Container>
+                    <Carousel fade>
 
-                <Carousel>
-                    <Carousel.Item>
-                        <img
-                            fluid
-                            className="d-block w-100"
-                            src="https://via.placeholder.com/150"
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            fluid
-                            className="d-block w-100"
-                            src="https://via.placeholder.com/150"
-                            alt="Second slide"
-                        />
 
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            fluid
-                            className="d-block w-100"
-                            src="https://via.placeholder.com/150"
-                            alt="Third slide"
-                        />
+                        {coins.map(coin => {
+                            return (
 
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
-            </Jumbotron>
+                                <Carousel.Item key={coin.id} style={{ background: "grey" }}>
+
+                                    <a href={coin.websiteUrl}>
+                                        <img
+                                            className="d-block w-100"
+                                            src={coin.iconUrl}
+                                            alt={coin.id}
+                                            href={coin.websiteUrl}
+                                        />
+                                    </a>
+                                    <Carousel.Caption>
+
+                                        <h3>{coin.name}</h3>
+                                        <p>{ }</p>
+
+                                    </Carousel.Caption>
+
+
+                                </Carousel.Item>
+
+                            )
+                        })}
+
+                    </Carousel>
+                </Container>
+                {/* </div > */}
+            </Jumbotron >
         </div>
     )
 }
