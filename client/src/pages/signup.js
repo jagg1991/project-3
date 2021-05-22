@@ -1,33 +1,27 @@
 import React from "react";
-
+import "../styles/Signup.css"
 function Signup() {
     return (
-        <div className="container">
+        <div classNameName="container">
 
 
-            <form className="form signup-form">
-                <h2>Signup</h2>
-                <div className="data">
-                    <label for="name-signup">First name:</label>
-                    <input className="form-input" type="text" id="name-signup" />
-                </div>
-                <div className="data">
-                    <label for="name-signup">Last name:</label>
-                    <input className="form-input" type="text" id="name-signup" />
-                </div>
-                <div className="data">
-                    <label for="email-signup">email:</label>
-                    <input className="form-input" type="text" id="email-signup" />
-                </div>
-                <div className="data">
-                    <label for="password-signup">password:</label>
-                    <input className="form-input" type="password" id="password-signup" />
-                </div>
+            <div id="login-box">
+                <div className="left-box">
 
-                <div className="form-group">
-                    <button className="btn btn-primary" type="submit">signup</button>
+                    <h1>Signup</h1>
+                    <form action="#" method="post">
+                        <input type="text" className="txtb" placeholder="First name" />
+                        <input type="text" className="txtb" placeholder="Last name" />
+                        <input type="text" className="txtb" placeholder="Email" />
+                        <input type="text" className="txtb" placeholder="Password" />
+                        <input type="text" className="txtb" placeholder="Confirm Password" />
+                        <input type="submit" value="Sign Up" name="signup-button" className="signup-btn" />
+                    </form>
+                    <small className="text-muted ">Already Have An Account?<a href="/login">Login</a></small>
                 </div>
-            </form>
+                <div className="right-box">
+                </div>
+            </div>
 
         </div>
     )

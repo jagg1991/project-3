@@ -1,8 +1,8 @@
 const router = require("express").Router();
 //need to add route
-const routes = require("./");
+const userRoutes = require("./usersRoutes");
 
 // need to change name when ready
-router.use("/", routes);
+router.use("/users", userRoutes);
 
 module.exports = router;
