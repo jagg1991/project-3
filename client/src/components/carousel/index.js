@@ -32,7 +32,7 @@ function Slides() {
                         {coins.map(coin => {
                             return (
 
-                                <Carousel.Item key={coin.id} style={{ background: "grey" }}>
+                                <Carousel.Item key={coin.id} style={{ background: "grey" }} >
 
                                     <a href={coin.websiteUrl}>
                                         <img
