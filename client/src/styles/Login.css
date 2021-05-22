@@ -1,3 +1,10 @@
+body {
+  background-image: url('moon.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,10 +12,11 @@
     user-select: none;
   }
   .bg-img{
-    background: url('bg.jpeg');
+    background: url('moon.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
   }
   .bg-img:after{
     position: absolute;

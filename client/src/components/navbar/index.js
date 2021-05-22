@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap"
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
 function NavbarTab() {
     return (
 
@@ -7,7 +7,7 @@ function NavbarTab() {
 
         < Navbar sticky="top" bg="dark" variant="dark" expand="lg" >
 
-            <Navbar.Brand href="/home">Home</Navbar.Brand>
+            <Navbar.Brand href="/home">Lunar Society</Navbar.Brand>
 
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -16,7 +16,10 @@ function NavbarTab() {
                     <Nav.Link href="/signup">Signup</Nav.Link>
 
                 </Nav>
-
+                <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-success">Search</Button>
+                </Form>
             </Navbar.Collapse>
 
         </Navbar >
