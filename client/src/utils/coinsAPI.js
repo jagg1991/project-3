@@ -15,10 +15,10 @@ function coinsAPI() {
     };
 
     return axios.request(options).then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
 
         const results = response.data.data.coins
-        console.log(results)
+        // console.log(results)
 
 
 

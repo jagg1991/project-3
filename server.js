@@ -1,13 +1,31 @@
 const express = require("express");
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3001;
+const MongoDBStore = require('connect-mongodb-session')(session);
+// const mongoStore = require("connect-mongoose")("express");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+const store = new MongoDBStore({
+    uri: 'mongodb://localhost:27017/connect_mongodb_session_test',
+    collection: 'mySessions'
+});
+
+app.use(require('express-session')({
+    secret: 'This is a secret',
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
+    },
+    store: store,
+    resave: true,
+    saveUninitialized: true
+}));
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
@@ -17,7 +35,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist"
+    process.env.MONGODB_URI || "mongodb://localhost/userlist"
 );
 
 // Start the API server
