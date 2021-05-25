@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "../styles/Login.css"
+import { Button } from "react-bootstrap"
+
+
 
 // const pass_field = document.querySelector('.pass-key');
 // const showBtn = document.querySelector('.show');
@@ -35,29 +38,36 @@ function Login() {
 
 
     };
+
+
     const handleFormSubmit = event => {
 
         event.preventDefault();
         axios.post("/api/users/auth", cred)
-            .then(data => {
-                console.log(data.data)
+            .then(user => {
+                console.log(user.data)
+                if (user.data) {
+                    document.location.replace('/user');
+                }
+
             })
+
             .catch(err => {
                 console.log(err)
             })
-        // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+        // Alert the user their first and last name, clear`this.state.firstName` and`this.state.lastName`, clearing the inputs
 
-        // setCred({
-        //     email: "",
-        //     password: ""
-        // });
+        setCred({
+            email: "",
+            password: ""
+        });
     };
 
     return (
 
         <div className="bg-img">
             <div className="content">
-                <header>Login Form</header>
+                <header>Login!</header>
                 <form onSubmit={(e) => handleFormSubmit(e)} action="#">
                     <div className="field">
                         <span className="fa fa-user"></span>
@@ -71,9 +81,12 @@ function Login() {
                     <div className="pass">
                         <a href="/forgot">Forgot Password?</a>
                     </div>
-                    <div className="field">
+                    {/* <div className="field">
                         <input type="submit" value="LOGIN" />
-                    </div>
+                    </div> */}
+
+                    <Button type="submit" className="field" value="LOGIN" >Login</Button>
+
                 </form>
                 <div className="login">
                     Or login with</div>

@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const User = require("../../models/user");
 const bcrypt = require("bcryptjs");
+
 //routes are at "/api/users"
 router.post("/", async (req, res) => {
+
     const salt = await bcrypt.genSalt(10)
     req.body.password = await bcrypt.hash(req.body.password, salt)
 
@@ -15,6 +17,7 @@ router.post("/", async (req, res) => {
             res.json(userData)
         })
         .catch(err => {
+            console.log(err)
             res.status(500).json(err)
         })
 }

@@ -6,7 +6,7 @@ body
     color: #777;
     font-family: sans-serif;
     font-weight: 300;
-    background-image: url(bg2.jpeg);
+    background-image: url(moon.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -14,7 +14,7 @@ body
 #login-box
 {
     position: relative;
-    height: 430px;
+    height: 525px;
     width: 630px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
@@ -86,7 +86,7 @@ input[type="submit"]:focus
     box-sizing: border-box;
     padding: 40px;
     width: 315px;
-    height: 430px;
+    height: 525px;
     background-image: url(bg.jpeg);
     background-size: cover;
     background-position: center;
@@ -104,7 +104,7 @@ small a:hover
     text-decoration: none;
 }
 
-@-webkit-keyframes autofill {
+@keyframes autofill {
     to {
         color: black;
         background: transparent;
@@ -112,6 +112,6 @@ small a:hover
 }
 
 .txtb:-webkit-autofill {
-    -webkit-animation-name: autofill;
-    -webkit-animation-fill-mode: both;
+    animation-name: autofill;
+    animation-fill-mode: both;
 }
