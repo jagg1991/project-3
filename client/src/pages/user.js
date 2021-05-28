@@ -1,8 +1,29 @@
 import React from "react"
 import { Card, Button, Nav, CardDeck } from "react-bootstrap"
+// import { Redirect } from "react-router-dom"
 
 
-function User() {
+function User({ user }) {
+
+    // if (!authorized) {
+    //     return <Redirect to="./login" />
+    // }
+
+    // const [cred, setCred] = useState({
+    //     email: "",
+    //     password: ""
+    // })
+    // function didMount() {
+    //     axios.get("/api/users/auth/", cred)
+    //         .then(user => {
+    //             console.log(user.data)
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // }
+    // didMount()
+
     return (
         <>
             <Card>

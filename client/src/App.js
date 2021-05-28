@@ -1,5 +1,6 @@
 // import './App.css';
 // import Slides from './components/carousel';
+import React from "react"
 import Navbar from './components/navbar';
 import Signup from './pages/signup';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -11,35 +12,32 @@ import Home from "./pages/home"
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path={["/", "/home"]}>
-            {/* <Slides /> */}
-            <Home />
+    <React.StrictMode>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path={["/", "/home"]}>
+              <Home />
+            </Route>
+            <Route exact path="/login" component={Login}>
+              <Login />
+            </Route>
+            <Route exact path={["/signup"]}>
+              <Signup />
+            </Route>
+            <Route exact path={["/forgot"]}>
+              <Forgot />
+            </Route>
+            <Route exact path="/user" component={() => <User authorized={true} />}>
+              <User />
+            </Route>
+          </Switch>
 
-          </Route>
-          <Route exact path={["/login"]}>
-            <Login />
-          </Route>
-          <Route exact path={["/signup"]}>
-            <Signup />
-          </Route>
-          <Route exact path={["/forgot"]}>
-            <Forgot />
-          </Route>
-          <Route exact path={["/user"]}>
-            <User />
-          </Route>
 
-
-
-        </Switch>
-
-        {/* <CoinsAPI /> */}
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </React.StrictMode>
   );
 }
 
