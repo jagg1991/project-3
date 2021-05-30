@@ -1,6 +1,5 @@
 import React from "react";
 import Slides from "../components/carousel"
-import Explain from "../components/explain";
 import Deck from "../components/cardDeck"
 import { Container, Row, Col } from "react-bootstrap";
 import "../styles/home.css";
@@ -25,15 +24,13 @@ function Home() {
 
                 </div>
             </section> */}
-            <Container>
+            <Container >
                 <Row>
-                    <Col xs={8}><Explain />
+                    <Col xs={8}>
                         <Slides /></Col>
                     <Col xs={4}>
                         <div className="container">
-                            <iFrame
-                                src="https://images-assets.nasa.gov/video/NHQ_2019_0311_Go%20Forward%20to%20the%20Moon/NHQ_2019_0311_Go%20Forward%20to%20the%20Moon~large.mp4">
-                            </iFrame>
+
                         </div>
                     </Col>
                     <Col ></Col>

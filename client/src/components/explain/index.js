@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 function Explain() {
     return (
 
-        <Card>
+        <Card >
             <Card.Header>Lunar Society</Card.Header>
             <Card.Body>
                 <blockquote className="blockquote mb-0">

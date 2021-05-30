@@ -1,10 +1,11 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/Login.css"
 import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import UserContext from "../store/userContext"
-
+import UserContext from "../store/userContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCoins } from "@fortawesome/free-solid-svg-icons"
 
 
 // const pass_field = document.querySelector('.pass-key');
@@ -28,13 +29,15 @@ function Login() {
         email: "",
         password: ""
     })
-    const [user, setUsers] = useState({
-        email: "",
-        firstName: "",
-        lastName: "",
-        username: "",
 
-    })
+    const { setUser } = useContext(UserContext)
+    // const [user, setUsers] = useState({
+    //     email: "",
+    //     firstName: "",
+    //     lastName: "",
+    //     username: "",
+
+    // })
 
     const handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
@@ -51,35 +54,6 @@ function Login() {
     };
 
 
-    // async function handleSubmit(event) {
-    //     event.preventDefault();
-    //     axios.post("/api/users/auth", cred)
-    //         .then(user => {
-    //             // console.log(user.data)
-    //             // if (user.data) {
-    //             //     document.location.replace('/user');
-    //             // }
-    //             try {
-    //                 await cred.signIn(email, password);
-    //                 userHasAuthenticated(true);
-    //                 history.push("/");
-    //             } catch (e) {
-    //                 alert(e.message);
-    //             }
-
-    //         })
-
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    //     // Alert the user their first and last name, clear`this.state.firstName` and`this.state.lastName`, clearing the inputs
-
-    //     setCred({
-    //         email: "",
-    //         password: ""
-    //     });
-    // }
-
 
     const handleFormSubmit = event => {
 
@@ -87,10 +61,17 @@ function Login() {
         axios.post("/api/users/auth", cred)
             .then(user => {
                 console.log(user.data)
-                // if (user.data) {
-                //     document.location.replace('/user');
-                // }
-                setUsers(user.data)
+                if (user.data) {
+                    setUser({
+                        firstName: user.data.firstName,
+                        lastName: user.data.lastName,
+                        username: user.data.username,
+                        email: user.data.email,
+                        isLoggedIn: true
+                    })
+                    history.push('/user')
+                }
+
             })
 
             .catch(err => {
@@ -101,51 +82,54 @@ function Login() {
             email: "",
             password: ""
         });
-        console.log(user)
+
     };
 
     return (
-        <UserContext.Provider value={{ user }}>
-            <div className="bg-img">
-                <div className="content">
-                    <header>Login!</header>
-                    <form onSubmit={(e) => handleFormSubmit(e)} action="#">
-                        <div className="field">
-                            <span className="fa fa-user"></span>
-                            <input name="email" type="text" required placeholder="Email" onChange={(e) => handleInputChange(e)} value={cred.email} />
-                        </div>
-                        <div className="field space">
-                            <span className="fa fa-lock"></span>
-                            <input name="password" type="password" className="pass-key" required placeholder="Password" onChange={(e) => handleInputChange(e)} value={cred.password} />
-                            <span className="show">SHOW</span>
-                        </div>
-                        <div className="pass">
-                            <a href="/forgot">Forgot Password?</a>
-                        </div>
-                        {/* <div className="field">
+
+        <div className="container bg-img">
+            <div className="content">
+                <header>Login!</header>
+                <form onSubmit={(e) => handleFormSubmit(e)} action="#">
+                    <div className="field">
+                        <span className="fa fa-user"></span>
+                        <input name="email" type="text" required placeholder="Email" onChange={(e) => handleInputChange(e)} value={cred.email} />
+                    </div>
+                    <div className="field space">
+                        <span className="fa fa-lock"></span>
+                        <input name="password" type="password" className="pass-key" required placeholder="Password" onChange={(e) => handleInputChange(e)} value={cred.password} />
+                        <span className="show">SHOW</span>
+                    </div>
+                    <div className="pass">
+                        <a href="/forgot">Forgot Password?</a>
+                    </div>
+                    {/* <div className="field">
                         <input type="submit" value="LOGIN" />
                     </div> */}
+                    {/* onClick={() => { history.push("./user") }} */}
+                    <Button type="submit" className="field" value="LOGIN" >Login</Button>
 
-                        <Button onClick={() => { history.push("./user") }} type="submit" className="field" value="LOGIN" >Login</Button>
-
-                    </form>
-                    <div className="login">
-                        Or login with</div>
-                    <div className="links">
-                        <div className="facebook">
-                            <i className="fab fa-facebook-f"><span>Facebook</span></i>
-                        </div>
-                        <div className="instagram">
-                            <i classNames="fab fa-Email"><span>Email</span></i>
-                        </div>
+                </form>
+                <div className="login">
+                    Or login with</div>
+                <div className="links">
+                    <div className="facebook">
+                        <i className="fab fa-facebook-f"><span>Facebook</span></i>
                     </div>
-                    <div className="signup">
-                        Don't have account?
+
+                    <button className="instagram" style={{ color: "white" }}>
+                        <FontAwesomeIcon style={{ color: "white", size: "5x", margin: "2px" }} icon={faCoins}></FontAwesomeIcon>Coinbase
+                    </button>
+
+
+                </div>
+                <div className="signup">
+                    Don't have account?
                     <a href="/signup">Signup Now</a>
-                    </div>
                 </div>
             </div>
-        </UserContext.Provider>
+        </div>
+
     )
 }
 

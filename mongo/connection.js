@@ -2,8 +2,8 @@ const { MongoClient } = require("mongodb");
 
 async function main() {
   const uri =
-    "mongodb+srv://<username>:<password>@<your-cluster-url>/sample_airbnb?retryWrites=true&w=majority";
-
+    // "mongodb+srv://<username>:<password>@<your-cluster-url>/sample_airbnb?retryWrites=true&w=majority";
+    "mongodb://localhost:27017/connect_mongodb_session_test"
   const client = new MongoClient(uri);
 
   try {

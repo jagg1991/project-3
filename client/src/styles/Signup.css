@@ -14,7 +14,7 @@ body
 #login-box
 {
     position: relative;
-    height: 525px;
+    height: 540px;
     width: 630px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
@@ -86,7 +86,7 @@ input[type="submit"]:focus
     box-sizing: border-box;
     padding: 40px;
     width: 315px;
-    height: 525px;
+    height: 545px;
     background-image: url(bg.jpeg);
     background-size: cover;
     background-position: center;

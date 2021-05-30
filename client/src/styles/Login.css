@@ -40,6 +40,7 @@
     transform: translate(-50%,-50%);
     background: rgba(255,255,255,0.04);
     box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+    
   }
   .content header{
     color: white;
@@ -165,3 +166,11 @@
   .signup a:hover{
     text-decoration: underline;
   }
+  .icon span{
+    margin-left: 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+  }
+ 
