@@ -11,9 +11,13 @@ function Congrats() {
 
             <Container className="congrats" fluid
                 style={{
-                    backgroundColor: "grey",
+                    background: "linear-gradient(115deg, #070808 35%, #646464 65%)",
+
                     padding: "40px",
-                    margin: "20px",
+                    marginTop: "75px",
+                    marginBottom: "150px",
+                    marginRight: "20px",
+                    marginLeft: "40px",
                     width: "95%",
                     height: "100%",
                     borderStyle: "ridge"
@@ -21,7 +25,14 @@ function Congrats() {
                 }}>
 
                 <Row>
-                    <h1 style={{ textAlign: "center" }}>Congratulations!</h1>
+                    <h1
+                        style={{
+                            textAlign: "center",
+                            color: "whitesmoke"
+                        }}
+                    >
+                        Congratulations!</h1>
+                    <br />
                     <Col xs={8}>
 
                         <div style={{
@@ -61,7 +72,7 @@ function Congrats() {
                         <br />
                         <p>You are officially a Lunatic! We are getting closer to becoming a multi-planet species, and we would like to welcome you to the journey!
                         In January of 1967 the The Outer Space Treaty was signed as part of a space law . As part of this treaty, no nation may claim sovereignty of outer space or any celestial body.
-                        This makes it a grey area to purchase Lunar land. Here at Lunar Society, we set out to solve that problem with the implementation of cryptocurrency. In order to colonize celestial bodies, we will need to all come together to solve problems. We hope your ready for the challenge!</p>
+                        This makes it a grey area to purchase Lunar land. Here at Lunar Society, we set out to solve that problem with the implementation of blockchain technology. In order to colonize celestial bodies, we will need to all come together to solve problems. We hope your ready for the challenge!</p>
 
                     </Col>
 

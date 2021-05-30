@@ -76,37 +76,22 @@ function App() {
           <Navbar />
           <Switch>
 
-            <ProtectedRoute path="/user" component={User} />
+            <ProtectedRoute  >
+              <Route exact path="/user" component={User} />
+              <Route exact path="/congrats" component={Congrats} />
+            </ ProtectedRoute>
+
             <Route path="/login" component={Login} />
-
-
-            <Route exact path={["/", "/home"]}>
-              <Home />
-            </Route>
-            {/* <Route exact path="/login" component={Login}>
-              <Login />
-            </Route> */}
-            <Route exact path={["/signup"]}>
-              <Signup />
-            </Route>
-            <Route exact path={["/forgot"]}>
-              <Forgot />
-            </Route>
-            {/* <Route exact path="/user" component={() => <User authorized={true} />}>
-              <User />
-            </Route> */}
-            <Route exact path="/about" >
-              <About />
-            </Route>
-            <Route exact path="/congrats" >
-              <Congrats />
-            </Route>
+            <Route exact path={["/", "/home"]} component={Home} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path={["/forgot"]} component={Forgot} />
+            <Route exact path="/about" component={About} />
           </Switch>
 
 
         </div>
       </UserContext.Provider>
-    </Router>
+    </Router >
 
   );
 }
