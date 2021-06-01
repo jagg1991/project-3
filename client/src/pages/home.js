@@ -1,13 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import Slides from "../components/carousel"
 import Deck from "../components/cardDeck"
 import { Container, Row, Col } from "react-bootstrap";
 import "../styles/home.css";
+import UserContext from "../store/userContext"
 
 
 
 function Home() {
-
+    const { user } = useContext(UserContext)
 
 
     return (
