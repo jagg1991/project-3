@@ -1,31 +1,26 @@
 import React from "react"
-import { Form, Button, Col } from "react-bootstrap"
+import "../styles/forgot.css";
 
 
 
 function Forgot() {
     return (
+
         <div className="container">
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Col sm={3} className="my-1">
-                        <Form.Label>Need help loging in??</Form.Label>
-                        <Form.Text className="text-muted">
-                            Enter your email here, and we'll send you a link to reset your password!
-                    </Form.Text>
-                        <Form.Control type="email" placeholder="Enter email" />
-                    </Col>
-                </Form.Group>
-
-
-
-
-
-                <Button variant="primary" type="submit">
-                    Send Link
-                </Button>
-            </Form>
+            <div class="container d-flex justify-content-center align-items-center vh-100">
+                <div class="bg-white text-center p-5 mt-3 center">
+                    <h3>Forgot Password </h3>
+                    <p>Type in your email below, and we will send you a link to reset you password!</p>
+                    <form class="pb-3" action="#">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Email" required />
+                        </div>
+                    </form>
+                    <button type="button" class="forgot">Reset Password</button>
+                </div>
+            </div>
         </div>
+
     )
 }
 

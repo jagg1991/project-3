@@ -5,7 +5,10 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const MongoDBStore = require('connect-mongodb-session')(session);
-// const mongoStore = require("connect-mongoose")("express");
+
+
+// const session = db.getMongo().startSession();
+// db = session.getDatabase(db.getName());
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -16,13 +19,14 @@ const store = new MongoDBStore({
     collection: 'mySessions'
 });
 
-app.use(require('express-session')({
+app.use(session({
     secret: 'This is a secret',
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
     },
+
     store: store,
-    resave: true,
+    resave: false,
     saveUninitialized: true
 }));
 

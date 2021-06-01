@@ -12,8 +12,10 @@ function NavbarTab() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/login">Login</Nav.Link>
+                    <Nav.Link href="/about">About</Nav.Link>
+                    <Nav.Link style={{ float: "right" }} href="/login">Login</Nav.Link>
                     <Nav.Link href="/signup">Signup</Nav.Link>
+
 
                 </Nav>
                 <Form inline>

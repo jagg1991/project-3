@@ -2,6 +2,7 @@ const router = require("express").Router();
 const User = require("../../models/user");
 const bcrypt = require("bcryptjs");
 
+
 //routes are at "/api/users"
 router.post("/", async (req, res) => {
 
@@ -23,6 +24,21 @@ router.post("/", async (req, res) => {
 }
 )
 
+router.get("/", async (req, res) => {
+
+    User.findById(
+        req.session.user_id
+    )
+        .then(userData => {
+
+            res.json(userData)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json(err)
+        })
+
+})
 router.post("/auth", async (req, res) => {
     User.findOne(
         {

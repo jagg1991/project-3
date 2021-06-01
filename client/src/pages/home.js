@@ -1,24 +1,52 @@
 import React from "react";
 import Slides from "../components/carousel"
-import Explain from "../components/explain";
+import Deck from "../components/cardDeck"
+import { Container, Row, Col } from "react-bootstrap";
 import "../styles/home.css";
-// import nasaAPI from "../utils/nasaAPI";
+
+
 
 function Home() {
 
-    // nasaAPI()
+
 
     return (
         <>
-            <Slides >
-            </ Slides>
-            <Explain />
+            {/* <section className="container" fluid>
+                <div className="row">
 
-            {/* <div className="container">
-                <iFrame
-                    src="https://images-assets.nasa.gov/video/NHQ_2019_0311_Go%20Forward%20to%20the%20Moon/NHQ_2019_0311_Go%20Forward%20to%20the%20Moon~large.mp4">
-                </iFrame>
-            </div> */}
+                    <div className="col-6">
+                        <Slides />
+                    </div>
+                    <div className="col-6">
+
+
+                    </div>
+
+                </div>
+            </section> */}
+            <Container fluid >
+                <Row>
+                    <Col xs={12}>
+                        <Slides /></Col>
+
+
+                </Row>
+                <Row>
+                    <Col></Col>
+                    <Col xs={5}>
+
+                    </Col>
+                    <Col></Col>
+                </Row>
+            </Container>
+
+            <Container>
+                <header style={{ backgroundColor: "white", textAlign: "center" }}>Want to get in on the Lunar action?</header>
+                <Deck />
+            </ Container>
+
+
 
         </>
     )

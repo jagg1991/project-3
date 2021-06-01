@@ -1,8 +1,11 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/Login.css"
-import { Button } from "react-bootstrap"
-
+import { Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import UserContext from "../store/userContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCoins } from "@fortawesome/free-solid-svg-icons"
 
 
 // const pass_field = document.querySelector('.pass-key');
@@ -20,10 +23,21 @@ import { Button } from "react-bootstrap"
 // });
 
 function Login() {
+    let history = useHistory();
+
     const [cred, setCred] = useState({
         email: "",
         password: ""
     })
+
+    const { setUser } = useContext(UserContext)
+    // const [user, setUsers] = useState({
+    //     email: "",
+    //     firstName: "",
+    //     lastName: "",
+    //     username: "",
+
+    // })
 
     const handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
@@ -40,6 +54,7 @@ function Login() {
     };
 
 
+
     const handleFormSubmit = event => {
 
         event.preventDefault();
@@ -47,7 +62,14 @@ function Login() {
             .then(user => {
                 console.log(user.data)
                 if (user.data) {
-                    document.location.replace('/user');
+                    setUser({
+                        firstName: user.data.firstName,
+                        lastName: user.data.lastName,
+                        username: user.data.username,
+                        email: user.data.email,
+                        isLoggedIn: true
+                    })
+                    history.push('/user')
                 }
 
             })
@@ -55,17 +77,17 @@ function Login() {
             .catch(err => {
                 console.log(err)
             })
-        // Alert the user their first and last name, clear`this.state.firstName` and`this.state.lastName`, clearing the inputs
 
         setCred({
             email: "",
             password: ""
         });
+
     };
 
     return (
 
-        <div className="bg-img">
+        <div className="container bg-img">
             <div className="content">
                 <header>Login!</header>
                 <form onSubmit={(e) => handleFormSubmit(e)} action="#">
@@ -84,7 +106,7 @@ function Login() {
                     {/* <div className="field">
                         <input type="submit" value="LOGIN" />
                     </div> */}
-
+                    {/* onClick={() => { history.push("./user") }} */}
                     <Button type="submit" className="field" value="LOGIN" >Login</Button>
 
                 </form>
@@ -94,9 +116,12 @@ function Login() {
                     <div className="facebook">
                         <i className="fab fa-facebook-f"><span>Facebook</span></i>
                     </div>
-                    <div className="instagram">
-                        <i classNames="fab fa-Email"><span>Email</span></i>
-                    </div>
+
+                    <button className="instagram" style={{ color: "white" }}>
+                        <FontAwesomeIcon style={{ color: "white", size: "5x", margin: "2px" }} icon={faCoins}></FontAwesomeIcon>Coinbase
+                    </button>
+
+
                 </div>
                 <div className="signup">
                     Don't have account?
@@ -104,6 +129,7 @@ function Login() {
                 </div>
             </div>
         </div>
+
     )
 }
 

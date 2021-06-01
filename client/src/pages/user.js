@@ -1,15 +1,20 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Card, Button, Nav, CardDeck } from "react-bootstrap"
+// import { Redirect } from "react-router-dom"
+import UserContext from "../store/userContext"
 
 
 function User() {
+    const { user } = useContext(UserContext)
+    console.log(user)
+
     return (
         <>
             <Card>
                 <Card.Header>
                     <Nav variant="tabs" defaultActiveKey="#first">
                         <Nav.Item>
-                            <Nav.Link href="#first">Active</Nav.Link>
+                            <Nav.Link href="#first">Welcome {user.firstName}</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link href="#link">Link</Nav.Link>
@@ -28,7 +33,7 @@ function User() {
             <div className="container">
                 <CardDeck>
                     <Card>
-                        <Card.Img variant="top" src="https://via.placeholder.com/150" />
+                        <Card.Img variant="top" src="moon.jpg" />
                         <Card.Body>
                             <Card.Title>Card title</Card.Title>
                             <Card.Text>
@@ -41,7 +46,7 @@ function User() {
                         </Card.Footer>
                     </Card>
                     <Card>
-                        <Card.Img variant="top" src="https://via.placeholder.com/150" />
+                        <Card.Img variant="top" src="moon.jpg" />
                         <Card.Body>
                             <Card.Title>Card title</Card.Title>
                             <Card.Text>
@@ -54,7 +59,7 @@ function User() {
                         </Card.Footer>
                     </Card>
                     <Card>
-                        <Card.Img variant="top" src="https://via.placeholder.com/150" />
+                        <Card.Img variant="top" src="moon.jpg" />
                         <Card.Body>
                             <Card.Title>Card title</Card.Title>
                             <Card.Text>
