@@ -45,3 +45,5 @@ async function createPurchase(client, newPurchase) {
     "New purchase created with the following id: ${result.insertedId}"
   );
 }
+
+// added to transaction, not sure if we can delete.
