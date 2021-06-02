@@ -1,11 +1,16 @@
 
 import React, { useEffect, useState } from "react";
-import { Carousel, Jumbotron } from "react-bootstrap";
+import { Carousel, Jumbotron, Accordion, Card, Row, Col, Button, Modal } from "react-bootstrap";
 import coinsAPI from "../../utils/coinsAPI";
 import Container from "../container"
 function Slides() {
-    const [coins, setCoins] = useState([])
+     const [coins, setCoins] = useState([])
 
+     const [show, setShow] = useState();
+  
+     const handleClose = () => setShow(false);
+     const handleShow = () => setShow(true);
+    
     useEffect(() => {
         async function getCoins() {
             const coinData = await coinsAPI()
@@ -22,8 +27,10 @@ function Slides() {
     )
     return (
 
-        <div className="container">
-            <Jumbotron fluid>
+        <div className="container" style={{backgroundColor: "white,", margin: "40px"}}>
+           <Row> 
+               <Col xs={8}>
+       
                 <h1 style={{ textAlign: "center" }}>Top 10 Cryptocurrenies!</h1>
                 <Container>
                     <Carousel fade>
@@ -58,8 +65,73 @@ function Slides() {
                     </Carousel>
                 </Container>
                 {/* </div > */}
-            </Jumbotron >
+         
+            </Col>
+            <Col xs={4}>
+{/* <Accordion defaultActiveKey="0">
+{coins.map(coin => {
+                            console.log(coin.description)
+                            return (
+                                <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                  {coin.name}
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                  <Card.Body>{coin.description}</Card.Body>
+                                </Accordion.Collapse>
+                              </Card>
+                              
+
+                            )
+                        })}
+</Accordion> */}
+
+<Accordion defaultActiveKey="0">
+{coins.map(coin => {
+                            
+                            return (
+                                <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                  {coin.name}
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                <Button variant="primary" onClick={handleShow}>
+          Launch demo modal
+        </Button>
+  
+        <Modal show={show} onHide={handleClose} animation={false}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+                                
+                                
+                                 <Card.Body></Card.Body>
+                                </Accordion.Collapse>
+                              </Card>
+                              
+
+                            )
+                        })}
+  
+  
+  
+  
+
+</Accordion>
+</Col>
+</Row>
         </div>
+     
     )
 }
 

@@ -13,14 +13,17 @@ function NavbarTab() {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Link href="/about">About</Nav.Link>
-                    <Nav.Link style={{ float: "right" }} href="/login">Login</Nav.Link>
-                    <Nav.Link href="/signup">Signup</Nav.Link>
-
+                   
+                  
+                    <Nav.Link  href="/signup">Signup</Nav.Link>
+                   
 
                 </Nav>
                 <Form inline>
+                <Nav.Link style={{ float: "right" }} href="/login">Login</Nav.Link>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                     <Button variant="outline-success">Search</Button>
+               
                 </Form>
             </Navbar.Collapse>
 
