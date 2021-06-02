@@ -1,7 +1,7 @@
 import React from "react"
 import "../styles/forgot.css";
 import { Jumbotron, Row, Col, Container  } from "react-bootstrap";
-
+import "../styles/about.css"
 
 function About() {
     return (
@@ -12,15 +12,19 @@ function About() {
         // </Jumbotron>
 <>
  
+     {/* First row for Jumbotron */}
         <Row>
          <Col>
-           <Jumbotron>About Lunar Society!</Jumbotron>
+           <Jumbotron id="jumbotron"><h1>About Lunar Society</h1>
+           </Jumbotron>
            </Col>
        </Row>
      
        <Container>
+            {/* second row for about information*/}
             <Row >
-                <Col xs={4} style={{backgroundColor: "white", width: "50%"}}>
+                {/* first col for about information, xs is how much space on page you want it to take up*/}
+                <Col xs={4} className="about">
                 <blockquote className="blockquote mb-0">
                   <h4>History in the making</h4>
                    <p>
@@ -37,6 +41,7 @@ function About() {
                         by Ben Johnson<cite title="Source Title"></cite>
                     </footer>
                </blockquote>
+                {/* second col for about information*/}
                 </Col>
                 <Col xs={8} style={{backgroundColor: "grey"}}> 
                 <h1>Who are we?</h1>

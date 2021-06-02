@@ -10,6 +10,7 @@ import UserContext from "./store/userContext"
 import API from "./utils/API"
 import About from "./pages/about"
 import Congrats from "./pages/congrats"
+import Play from "./components/play"
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
 
@@ -76,16 +77,17 @@ function App() {
           <Navbar />
           <Switch>
 
-            <ProtectedRoute  >
+            {/* <ProtectedRoute  >
               <Route exact path="/user" component={User} />
               <Route exact path="/congrats" component={Congrats} />
-            </ ProtectedRoute>
+            </ ProtectedRoute> */}
 
             <Route path="/login" component={Login} />
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path={["/forgot"]} component={Forgot} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/play" component={Play} />
           </Switch>
 
 
