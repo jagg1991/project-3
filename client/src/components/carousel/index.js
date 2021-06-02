@@ -28,10 +28,17 @@ function Slides() {
     return (
 
         <div className="container" style={{backgroundColor: "white,", margin: "40px"}}>
-           <Row> 
-               <Col xs={8}>
-       
+          
+           <Container fluid style={{backgroundColor: "white"}}>
+              <Row>
+                <Col xs={12}>
+               <header>
                 <h1 style={{ textAlign: "center" }}>Top 10 Cryptocurrenies!</h1>
+                </header>
+                </Col>
+                </Row>
+                <Row> 
+                <Col xs={8}>
                 <Container>
                     <Carousel fade>
 
@@ -68,7 +75,7 @@ function Slides() {
          
             </Col>
             <Col xs={4}>
-{/* <Accordion defaultActiveKey="0">
+<Accordion defaultActiveKey="0">
 {coins.map(coin => {
                             console.log(coin.description)
                             return (
@@ -84,52 +91,12 @@ function Slides() {
 
                             )
                         })}
-</Accordion> */}
-
-<Accordion defaultActiveKey="0">
-{coins.map(coin => {
-                            
-                            return (
-                                <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey="0">
-                                  {coin.name}
-                                </Accordion.Toggle>
-                                <Accordion.Collapse eventKey="0">
-                                <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
-        </Button>
-  
-        <Modal show={show} onHide={handleClose} animation={false}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-                                
-                                
-                                 <Card.Body></Card.Body>
-                                </Accordion.Collapse>
-                              </Card>
-                              
-
-                            )
-                        })}
-  
-  
-  
-  
-
 </Accordion>
+
+
 </Col>
 </Row>
+</Container>
         </div>
      
     )
