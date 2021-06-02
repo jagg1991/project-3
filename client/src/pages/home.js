@@ -32,11 +32,11 @@ function Home() {
             <Container fluid >
                 <Container>
                     <Row>
-                        <Col xs={4}>
+                        <Col xs={8}>
                             <Slides />
                         </Col>
 
-                        <Col xs={8}>
+                        {/* <Col xs={8}>
                             <div >
                                 <blockquote className="blockquote mb-0">
                                     <p style={{ color: "white" }}>The 18th century was a time of change and revolution across the world. Intellectuals and ordinary men alike would gather to discuss anything and everything,
@@ -51,7 +51,7 @@ function Home() {
                                     </footer>
                                 </blockquote>
                             </div>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Container>
                 <Row>

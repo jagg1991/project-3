@@ -1,88 +1,67 @@
-
 import React, { useEffect, useState } from "react";
-import { Carousel, Jumbotron, Row } from "react-bootstrap";
+import { Carousel, Jumbotron, Accordion, Card, Row, Col, Button, Modal } from "react-bootstrap";
 import coinsAPI from "../../utils/coinsAPI";
 import Container from "../container"
+
 function Slides() {
-     const [coins, setCoins] = useState([])
+    const [coins, setCoins] = useState([])
+
 
      const [show, setShow] = useState();
-  
+
      const handleClose = () => setShow(false);
      const handleShow = () => setShow(true);
-    
+
     useEffect(() => {
         async function getCoins() {
             const coinData = await coinsAPI()
-            coinData.length = 10
-            console.log(coinData)
-            setCoins(coinData)
-            console.log(coinData)
         }
-
-        getCoins()
-
-    }, []
-
+    }
     )
+       
     return (
 
-        <Container fluid style={{
-            background: "linear-gradient(115deg, #070808 35%, #646464 65%)",
-            color: "white",
-            padding: "15px",
-            borderStyle: "ridge"
-        }}>
+      
+        <div className="container" style={{backgroundColor: "white,", margin: "40px"}}>
+           <Row> 
+               <Col xs={8}>
 
-
-
-            {/* <Jumbotron fluid> */}
-            <h1 style={{ textAlign: "center", fontSize: "2vw" }}>Top 10 Cryptocurrenies!</h1>
-
-
-            <Row>
-                <Container fluid >
-                    <Carousel fade style={{
-                        borderStyle: "ridge"
-                    }}>
-
-
-                        {coins.map(coin => {
-
-                            return (
-
-                                <Carousel.Item key={coin.id} style={{ background: "grey" }} >
-
-                                    <a href={coin.websiteUrl}>
-                                        <img
-                                            className="d-block w-100"
-                                            src={coin.iconUrl}
-                                            alt={coin.id}
-                                            href={coin.websiteUrl}
-                                        />
-                                    </a>
-                                    <Carousel.Caption>
-
-                                        <h3 style={{ fontSize: "1vw" }}>{coin.name}</h3>
-                                        <h4 style={{ fontSize: "1vw" }}>Coin price in USD: ${coin.price}</h4>
-
-                                    </Carousel.Caption>
-
-
-
-                                </Carousel.Item>
-
-                            )
-                        })}
-
+                <h1 style={{ textAlign: "center" }}>Top 10 Cryptocurrenies!</h1>
+                <Container>
+                    <Carousel fade>
+ 
                     </Carousel>
                 </Container>
-            </Row>
-            {/* </Jumbotron > */}
+          
+      
 
-        </Container>
+            </Col>
+            <Col xs={4}>
+<Accordion defaultActiveKey="0">
+{coins.map(coin => {
+                            console.log(coin.description)
+                            return (
+                                <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                  {coin.name}
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                  <Card.Body>{coin.description}</Card.Body>
+                                </Accordion.Collapse>
+                              </Card>
+                              
+                            )
+                        })}
+</Accordion>
+
+
+</Col>
+</Row>
+        </div>
+
     )
 }
+
 
 export default Slides
 
