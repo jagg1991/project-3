@@ -1,8 +1,9 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Container, Row } from "react-bootstrap";
 
 function Explain() {
     return (
+
 
         <Card >
             <Card.Header>Lunar Society</Card.Header>
@@ -22,6 +23,7 @@ The Lunar Society, or Lunar Circle as it was first called, was one such club. It
                 </blockquote>
             </Card.Body>
         </Card>
+
 
     )
 
