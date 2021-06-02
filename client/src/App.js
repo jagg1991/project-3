@@ -76,8 +76,13 @@ function App() {
 
           <Navbar />
           <Switch>
+<<<<<<< HEAD
 
             {/* <ProtectedRoute  >
+=======
+            {/* 
+            <ProtectedRoute  >
+>>>>>>> d6cc8532f8ee5dd7e5384d18947cee2c52cf572b
               <Route exact path="/user" component={User} />
               <Route exact path="/congrats" component={Congrats} />
             </ ProtectedRoute> */}

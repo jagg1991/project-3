@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Carousel, Jumbotron, Accordion, Card, Row, Col, Button, Modal } from "react-bootstrap";
+import { Carousel, Jumbotron, Row } from "react-bootstrap";
 import coinsAPI from "../../utils/coinsAPI";
 import Container from "../container"
 function Slides() {
@@ -17,7 +17,7 @@ function Slides() {
             coinData.length = 10
             console.log(coinData)
             setCoins(coinData)
-            console.log()
+            console.log(coinData)
         }
 
         getCoins()
@@ -27,23 +27,28 @@ function Slides() {
     )
     return (
 
-        <div className="container" style={{backgroundColor: "white,", margin: "40px"}}>
-          
-           <Container fluid style={{backgroundColor: "white"}}>
-              <Row>
-                <Col xs={12}>
-               <header>
-                <h1 style={{ textAlign: "center" }}>Top 10 Cryptocurrenies!</h1>
-                </header>
-                </Col>
-                </Row>
-                <Row> 
-                <Col xs={8}>
-                <Container>
-                    <Carousel fade>
+        <Container fluid style={{
+            background: "linear-gradient(115deg, #070808 35%, #646464 65%)",
+            color: "white",
+            padding: "15px",
+            borderStyle: "ridge"
+        }}>
+
+
+
+            {/* <Jumbotron fluid> */}
+            <h1 style={{ textAlign: "center", fontSize: "2vw" }}>Top 10 Cryptocurrenies!</h1>
+
+
+            <Row>
+                <Container fluid >
+                    <Carousel fade style={{
+                        borderStyle: "ridge"
+                    }}>
 
 
                         {coins.map(coin => {
+
                             return (
 
                                 <Carousel.Item key={coin.id} style={{ background: "grey" }} >
@@ -58,10 +63,11 @@ function Slides() {
                                     </a>
                                     <Carousel.Caption>
 
-                                        <h3>{coin.name}</h3>
-                                        <p>{ }</p>
+                                        <h3 style={{ fontSize: "1vw" }}>{coin.name}</h3>
+                                        <h4 style={{ fontSize: "1vw" }}>Coin price in USD: ${coin.price}</h4>
 
                                     </Carousel.Caption>
+
 
 
                                 </Carousel.Item>
@@ -71,34 +77,10 @@ function Slides() {
 
                     </Carousel>
                 </Container>
-                {/* </div > */}
-         
-            </Col>
-            <Col xs={4}>
-<Accordion defaultActiveKey="0">
-{coins.map(coin => {
-                            console.log(coin.description)
-                            return (
-                                <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey="0">
-                                  {coin.name}
-                                </Accordion.Toggle>
-                                <Accordion.Collapse eventKey="0">
-                                  <Card.Body>{coin.description}</Card.Body>
-                                </Accordion.Collapse>
-                              </Card>
-                              
+            </Row>
+            {/* </Jumbotron > */}
 
-                            )
-                        })}
-</Accordion>
-
-
-</Col>
-</Row>
-</Container>
-        </div>
-     
+        </Container>
     )
 }
 

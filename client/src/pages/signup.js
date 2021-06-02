@@ -41,7 +41,7 @@ function Signup() {
                 //     cancelTokenSource.cancel();
                 // }
                 if (user.data) {
-                    document.location.replace('/user');
+                    document.location.replace('/login');
                 }
             })
 
