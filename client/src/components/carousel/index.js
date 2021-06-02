@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Carousel, Jumbotron } from "react-bootstrap";
+import { Carousel, Jumbotron, Row } from "react-bootstrap";
 import coinsAPI from "../../utils/coinsAPI";
 import Container from "../container"
 function Slides() {
@@ -12,7 +12,7 @@ function Slides() {
             coinData.length = 10
             console.log(coinData)
             setCoins(coinData)
-            console.log()
+            console.log(coinData)
         }
 
         getCoins()
@@ -22,14 +22,28 @@ function Slides() {
     )
     return (
 
-        <div className="container">
-            <Jumbotron fluid>
-                <h1 style={{ textAlign: "center" }}>Top 10 Cryptocurrenies!</h1>
-                <Container>
-                    <Carousel fade>
+        <Container fluid style={{
+            background: "linear-gradient(115deg, #070808 35%, #646464 65%)",
+            color: "white",
+            padding: "15px",
+            borderStyle: "ridge"
+        }}>
+
+
+
+            {/* <Jumbotron fluid> */}
+            <h1 style={{ textAlign: "center", fontSize: "2vw" }}>Top 10 Cryptocurrenies!</h1>
+
+
+            <Row>
+                <Container fluid >
+                    <Carousel fade style={{
+                        borderStyle: "ridge"
+                    }}>
 
 
                         {coins.map(coin => {
+
                             return (
 
                                 <Carousel.Item key={coin.id} style={{ background: "grey" }} >
@@ -44,10 +58,11 @@ function Slides() {
                                     </a>
                                     <Carousel.Caption>
 
-                                        <h3>{coin.name}</h3>
-                                        <p>{ }</p>
+                                        <h3 style={{ fontSize: "1vw" }}>{coin.name}</h3>
+                                        <h4 style={{ fontSize: "1vw" }}>Coin price in USD: ${coin.price}</h4>
 
                                     </Carousel.Caption>
+
 
 
                                 </Carousel.Item>
@@ -57,9 +72,10 @@ function Slides() {
 
                     </Carousel>
                 </Container>
-                {/* </div > */}
-            </Jumbotron >
-        </div>
+            </Row>
+            {/* </Jumbotron > */}
+
+        </Container>
     )
 }
 
