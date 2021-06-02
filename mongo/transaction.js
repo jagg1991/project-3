@@ -4,6 +4,8 @@ async function main() {
   const uri =
     "mongodb+srv://<username>:<password>@<your-cluster-url>/sample_airbnb?retryWrites=true&w=majority";
 
+  // update uri to current mongoAtlas
+
   const client = new MongoClient(uri);
 
   try {
@@ -17,8 +19,28 @@ async function main() {
       [new Date("5-22-2021"), new Date("5-21-2021")],
       { pricePerAcre: 1000000 }
     );
+    await createPurchase(client, {
+      id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      username: {
+        type: DataTypes.STRING,
+      },
+      email: {
+        type: DataTypes.STRING,
+        unique: true,
+        validate: {
+          isEmail: true,
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+      },
+    });
   } finally {
-    //Close connection to mongoDb cluster
     await client.close();
   }
 }
@@ -124,4 +146,16 @@ function createReservationDocument(
   }
 
   return reservation;
+}
+
+main().catch(console.error);
+
+async function createPurchase(client, newPurchase) {
+  const result = await client
+    .db("sample_acreage")
+    .collection("sample_listings")
+    .insertOne(newListing);
+  console.log(
+    "New purchase created with the following id: ${result.insertedId}"
+  );
 }
