@@ -20,14 +20,14 @@ function About() {
            </Col>
        </Row>
      
-       <Container>
+       <Container className="about">
             {/* second row for about information*/}
             <Row >
                 {/* first col for about information, xs is how much space on page you want it to take up*/}
-                <Col xs={4} className="about">
+                <Col xs={6} >
                 <blockquote className="blockquote mb-0">
                   <h4>History in the making</h4>
-                   <p>
+                   <p id="history">
                    The 18th century was a time of change and revolution across the world. Intellectuals and ordinary men alike 
                    would gather to discuss anything and everything, from the social order problems of the day, to the latest 
                    scientific advances, and the intertwining political and philosophical issues. Clubs were formed in order to 
@@ -43,7 +43,7 @@ function About() {
                </blockquote>
                 {/* second col for about information*/}
                 </Col>
-                <Col xs={8} style={{backgroundColor: "grey"}}> 
+                <Col xs={6} > 
                 <h1>Who are we?</h1>
                 <p>We are students in a coding bootcamp, trying to build upon the blcokchain technologies. This will be our last
                     project before we head out into the real world! You can check out our GitHub portfolios below. <br />
