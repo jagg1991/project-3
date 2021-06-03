@@ -4,7 +4,6 @@ import Deck from "../components/cardDeck"
 import { Container, Row, Col } from "react-bootstrap";
 import "../styles/home.css";
 
-import Explain from "../components/explain"
 
 import UserContext from "../store/userContext"
 
@@ -16,6 +15,7 @@ function Home() {
 
     return (
         <> 
+  
      <Container>
         <Slides></Slides>
         </Container>
@@ -24,14 +24,17 @@ function Home() {
                 <Row>
                     <Col></Col>
                     <Col xs={5}>
-                        <Deck />
+                    
                     </Col>
                     <Col></Col>
                 </Row>
           
 
             <Container>
-                <header style={{ backgroundColor: "white", textAlign: "center" }}>Want to get in on the Lunar action?</header>
+              
+                <header style={{ color:"white", textAlign: "center" }}>Want to get in on the Lunar action?</header>
+                <hr style={{color: "white"}}/>
+                
                 <Deck />
             </ Container>
 
