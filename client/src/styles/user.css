@@ -1,0 +1,9 @@
+.welcome{
+    color: white
+}
+
+#user {
+    background: linear-gradient(115deg, #070808 35%, #646464 65%);
+    border-style: ridge;
+    text-align: center;
+}
