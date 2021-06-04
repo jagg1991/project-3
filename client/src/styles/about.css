@@ -1,10 +1,33 @@
+body {
+    background-image: url('bg2.jpeg');
+}
+
 #jumbotron {
   
     text-align: center;
     font-size: 50px;
     background-color: red ;
+    border-radius: 50% 30% / 10% 40%;
+    margin: 40px;
+    background: linear-gradient(115deg, #212525 35%, #646464 65%);
+    color: white;
+    text-shadow: 2px 2px 5px rgb(172, 167, 167)
 }
 
 .about {
-    background-color: cornsilk;
+    background: linear-gradient(115deg, #070808 35%, #646464 65%);
+    color: white;
+    border-style: ridge;
+    text-shadow: 2px 2px 5px rgb(167, 171, 172);
+    margin: 40px;
+    font-size: "1vw"
+   
+}
+
+#history {
+    font-size: "15vw"
+}
+
+a {
+    color: red
 }

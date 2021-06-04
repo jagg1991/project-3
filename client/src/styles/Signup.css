@@ -14,12 +14,14 @@ body
 #login-box
 {
     position: relative;
-    height: 540px;
+    height: 550px;
     width: 630px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    border-style: ridge;
     transform: translate(45%, 14%);
 }
+
 
 .left-box
 {
