@@ -22,7 +22,7 @@ function User() {
     const { user } = useContext(UserContext)
 
 
-    console.log(user)
+    
     if (!user.firstName) {
         return <Redirect to='/login' />
     }
@@ -53,6 +53,31 @@ function User() {
                                     <Row>
                                         <Col xs={8}>
                                             Email: {user.email}
+                                        </Col>
+                                        <Col xs={4}>
+                                            <Button variant="dark" >
+                                                Edit
+                                            </Button>
+                                        </ Col>
+                                    </Row>
+                                </Modal.Body>
+                             
+                                <Modal.Body>
+                                    <Row>
+                                        <Col xs={8}>
+                                            First name: {user.firstName}
+                                        </Col>
+                                        <Col xs={4}>
+                                            <Button variant="dark" >
+                                                Edit
+                                            </Button>
+                                        </ Col>
+                                    </Row>
+                                </Modal.Body>
+                                <Modal.Body>
+                                    <Row>
+                                        <Col xs={8}>
+                                            Last name: {user.lastName}
                                         </Col>
                                         <Col xs={4}>
                                             <Button variant="dark" >

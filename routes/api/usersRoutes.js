@@ -65,4 +65,24 @@ router.post("/auth", async (req, res) => {
         })
 })
 
+router.put("/", async (req, res) => {
+    console.log(req.session)
+  await  User.findByIdAndUpdate(
+        req.session.user_id,       
+      {
+          reserve1: req.body.reserve1,
+          reserve5: req.body.reserve5,
+          reserve10: req.body.reserve10,
+      }               
+    )
+    .then(userData => {
+
+        res.json(userData)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json(err)
+    })
+})
+
 module.exports = router

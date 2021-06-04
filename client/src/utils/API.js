@@ -6,8 +6,10 @@ const API = {
     },
     getUserById: function (id) {
         return axios.get("/api/user/" + id)
+    },
+    updateLand: function (data) {
+        return axios.put("/api/users", data)
     }
-
 }
 
 export default API

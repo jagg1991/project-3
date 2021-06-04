@@ -12,7 +12,7 @@ import UserContext from "../store/userContext"
 function Home() {
     const { user } = useContext(UserContext)
 
-
+ 
     return (
         <> 
   
