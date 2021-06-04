@@ -39,7 +39,7 @@ function User() {
                                 Welcome {user.firstName}
                             </h1>
                             <p className="welcome">
-                                Welcome to your profile page! Here you will see the lunar land you have reserved.
+                                Welcome to your profile page! Here you will see the lunar land you've reserved.
                             </p>
                             <Button variant="light" onClick={handleShow}>
                                 Profile
