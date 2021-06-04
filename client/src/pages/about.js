@@ -69,6 +69,7 @@ function About() {
                 </Col>
             </Row>
         </Container>
+        
         </>
 
     )
