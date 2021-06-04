@@ -88,7 +88,7 @@ function Slides() {
 <Col xs={4}>
 <Accordion defaultActiveKey="0" style={{color: "Black"}}>
 {coins.map(coin => {
-                           
+                           console.log(coin.description)
                             return (
                                 <Card>
                                     <Button variant="dark" >
