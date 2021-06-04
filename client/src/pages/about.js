@@ -47,7 +47,7 @@ function About() {
                 <h1>Who are we?</h1>
                 <p>We are students in a coding bootcamp, trying to build upon the blcokchain technologies. This will be our last
                     project before we head out into the real world! You can check out our GitHub portfolios below. <br />
-                <a href="https://github.com/Jin5044">Joseph Guajardo</a> <br />
+                <a href="https://github.com/jagg1991">Joseph Guajardo</a> <br />
                     <a href="https://github.com/Jin5044">Jeph</a>  <br />
                     <a href="https://github.com/MWebb2321">Mathew Webb</a> <br /> 
                     <a href="https://github.com/Guadaluped74">Guadalupe De Arcos</a> <br />
