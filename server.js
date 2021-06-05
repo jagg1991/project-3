@@ -40,12 +40,18 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/userlist", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true, 
-        useFindAndModify: false
-    }
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+}
 );
-
+app.get('*', function (_, res) {
+    res.sendFile(path.join(__dirname, './client/build/index.html'), function (err) {
+        if (err) {
+            res.status(500).send(err)
+        }
+    })
+})
 // Start the API server
 app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
