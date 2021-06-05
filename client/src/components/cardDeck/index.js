@@ -1,6 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useState, useContext, useEffect } from "react";
-import { Card, CardDeck, Button, Form } from "react-bootstrap"
+import { Card, CardDeck, Button } from "react-bootstrap"
 import UserContext from "../../store/userContext";
 import API from "../../utils/API"
 // import { Redirect } from "react-router-dom";
@@ -17,9 +17,9 @@ function Deck() {
     //     return <Redirect to='/login' />
     // }
 
-useEffect(() =>{
-    API.updateLand(reserve)
-}, [reserve])
+    useEffect(() => {
+        API.updateLand(reserve)
+    }, [reserve])
 
 
 
@@ -31,62 +31,62 @@ useEffect(() =>{
                 ...reserve, [name]: true
             }
         )
-          
+
     }
 
 
 
     return (
         <>
-            
-                <CardDeck style={{ marginBottom: "20px" }}>
-                    <Card>
-                        <Card.Img variant="top" src="moon.jpg" />
-                        <Card.Body>
-                            <Card.Title>1 acres!</Card.Title>
-                            <Card.Text>
-                                Would you like to reserve 1 acre of land?!
+
+            <CardDeck style={{ marginBottom: "20px" }}>
+                <Card>
+                    <Card.Img variant="top" src="moon.jpg" />
+                    <Card.Body>
+                        <Card.Title>1 acres!</Card.Title>
+                        <Card.Text>
+                            Would you like to reserve 1 acre of land?!
                                     </Card.Text>
-                            <Button name="reserve1" variant="dark" onClick={(e) => handleFormSubmit(e)} >
-                                Reserve now!
+                        <Button name="reserve1" variant="dark" onClick={(e) => handleFormSubmit(e)} >
+                            Reserve now!
                             </Button>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card>
-                        <Card.Img variant="top" src="moon.jpg" />
-                        <Card.Body>
-                            <Card.Title>5 acres!</Card.Title>
-                            <Card.Text>
-                                Would you like to reserve 5 acers of Lunar land?
+                    </Card.Body>
+                    <Card.Footer>
+                        <small className="text-muted">Last updated 3 mins ago</small>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Img variant="top" src="moon.jpg" />
+                    <Card.Body>
+                        <Card.Title>5 acres!</Card.Title>
+                        <Card.Text>
+                            Would you like to reserve 5 acers of Lunar land?
                                     </Card.Text>
-                            <Button name="reserve5" variant="dark" onClick={(e) => handleFormSubmit(e)} >
-                                Reserve now!
+                        <Button name="reserve5" variant="dark" onClick={(e) => handleFormSubmit(e)} >
+                            Reserve now!
                             </Button>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card>
-                        <Card.Img variant="top" src="moon.jpg" />
-                        <Card.Body>
-                            <Card.Title>10 acres!</Card.Title>
-                            <Card.Text>
-                                Would you like to reserve 10 acres of Lunar land?
+                    </Card.Body>
+                    <Card.Footer>
+                        <small className="text-muted">Last updated 3 mins ago</small>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Img variant="top" src="moon.jpg" />
+                    <Card.Body>
+                        <Card.Title>10 acres!</Card.Title>
+                        <Card.Text>
+                            Would you like to reserve 10 acres of Lunar land?
                                      </Card.Text>
-                            <Button name="reserve10" variant="dark" onClick={(e) => handleFormSubmit(e)} >
-                                Reserve now!
+                        <Button name="reserve10" variant="dark" onClick={(e) => handleFormSubmit(e)} >
+                            Reserve now!
                             </Button>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                </CardDeck>
-         
+                    </Card.Body>
+                    <Card.Footer>
+                        <small className="text-muted">Last updated 3 mins ago</small>
+                    </Card.Footer>
+                </Card>
+            </CardDeck>
+
 
         </>
     )
