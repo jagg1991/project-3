@@ -24,8 +24,8 @@ function Slides() {
         getCoins()
 
     }, []
+)
 
-    )
     return (
 
         <Container fluid style={{
@@ -34,19 +34,19 @@ function Slides() {
             padding: "15px",
             borderStyle: "ridge",
             width: "100%",
-           marginTop: "20px",
+           marginTop: "120px",
            marginBottom: "20px"
         }}>
 <Row>
             <Row>
 
-            {/* <Jumbotron fluid> */}
+           
             <Col xs={12}>
             <h1 style={{ textAlign: "center", fontSize: "2vw" }}>Top 10 Cryptocurrenies!</h1>
             </Col>
             </Row>
 
-            
+           
                <Col xs={8}>
                 <Container fluid >
                     <Carousel fade style={{
@@ -88,20 +88,25 @@ function Slides() {
 <Col xs={4}>
 <Accordion defaultActiveKey="0" style={{color: "Black"}}>
 {coins.map(coin => {
-                           console.log(coin.description)
+                         
                             return (
-                                <Card>
+                             
+                                
+                               <Card>
                                     <Button variant="dark" >
+                                
                                 <Accordion.Toggle eventKey={coin.id} as={Card.Header}  >
                                   {coin.name} 
                                 </Accordion.Toggle>
                                 </Button>
+                             
                                 <Accordion.Collapse eventKey={coin.id}>
                                   <Card.Body>{coin.description}</Card.Body>
                                
                                 </Accordion.Collapse>
-                               
+                          
                               </Card>
+                            
                               
                             )
                         })}
@@ -135,7 +140,7 @@ return(
      
 </Col> */}
             </Row>
-            {/* </Jumbotron > */}
+         
 
         </Container>
 
