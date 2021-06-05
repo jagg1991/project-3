@@ -27,7 +27,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0,0,0,0.7);
+
   }
   .content{
     position: absolute;
@@ -74,7 +74,7 @@
   .space{
     margin-top: 16px;
   }
-  .show{
+  /* .shine{
     position: absolute;
     right: 13px;
     font-size: 13px;
@@ -83,7 +83,7 @@
     display: none;
     cursor: pointer;
     font-family: 'Montserrat',sans-serif;
-  }
+  } */
   .pass-key:valid ~ .show{
     display: block;
   }

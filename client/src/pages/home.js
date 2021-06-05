@@ -3,7 +3,7 @@ import Slides from "../components/carousel"
 import Deck from "../components/cardDeck"
 import { Container, Row, Col } from "react-bootstrap";
 import "../styles/home.css";
-
+import Footer from "../components/footer"
 
 import UserContext from "../store/userContext"
 
@@ -15,7 +15,7 @@ function Home() {
  
     return (
         <> 
-  
+
      <Container>
         <Slides></Slides>
         </Container>
@@ -39,7 +39,7 @@ function Home() {
             </ Container>
 
 
-
+<Footer></Footer>
         </>
     )
 }

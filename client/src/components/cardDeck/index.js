@@ -3,8 +3,10 @@ import React, { useState, useContext, useEffect } from "react";
 import { Card, CardDeck, Button } from "react-bootstrap"
 import UserContext from "../../store/userContext";
 import API from "../../utils/API"
+import { useHistory } from "react-router-dom";
 // import { Redirect } from "react-router-dom";
 function Deck() {
+    let history = useHistory();
     const { user } = useContext(UserContext);
 
     const [reserve, setReserve] = useState({
@@ -26,6 +28,9 @@ function Deck() {
     const handleFormSubmit = event => {
         event.preventDefault();
         const { name } = event.target;
+        if (event) {
+            history.push('/congrats')
+        }
         setReserve(
             {
                 ...reserve, [name]: true
@@ -39,7 +44,7 @@ function Deck() {
     return (
         <>
 
-            <CardDeck style={{ marginBottom: "20px" }}>
+            <CardDeck style={{ marginBottom: "120px" }}>
                 <Card>
                     <Card.Img variant="top" src="moon.jpg" />
                     <Card.Body>

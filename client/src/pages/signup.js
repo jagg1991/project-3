@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/Signup.css"
 import { Button } from "react-bootstrap";
 import axios from "axios";
-
+import Footer from "../components/footer"
 //handles signup 
 function Signup() {
     const [cred, setCred] = useState({
@@ -58,7 +58,8 @@ function Signup() {
 
 
     return (
-        <div className="container">
+        <>
+        <div className="container" style={{marginBottom: "175px"}}>
 
 
             <div id="login-box">
@@ -84,8 +85,10 @@ function Signup() {
                 </div>
             </div>
 
-
+           
         </div>
+         <Footer></Footer>
+      </>
     )
 }
 

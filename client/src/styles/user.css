@@ -1,9 +1,40 @@
 .welcome{
-    color: white
+    color: rgb(240, 167, 32)
 }
 
 #user {
     background: linear-gradient(115deg, #070808 35%, #646464 65%);
     border-style: ridge;
     text-align: center;
+    margin-bottom: 0px;
+}
+
+.cardDeck{
+   margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.profile{
+    background: linear-gradient(115deg, #070808 35%, #646464 65%);
+    color: orange
+}
+
+.popup {
+    border-style: ridge;
+  
+}
+
+.getting {
+    margin: 0px;
+    background-image: url(universe.jpg) ;
+    height: 750px;
+    width: 100%;
+    background-size: cover;
+    border-bottom: groove rgb(31, 31, 31);
+ 
+}
+
+.cardDeck {
+    margin-bottom: 125px;
+    margin-top: 125px;
 }
