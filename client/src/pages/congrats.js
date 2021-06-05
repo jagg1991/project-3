@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
+import Footer from "../components/footer"
 
 function Congrats() {
 
@@ -85,7 +85,7 @@ function Congrats() {
             {/* <iframe title="video" width="100%" height="100%" src="https://images-assets.nasa.gov/video/NHQ_2019_0311_Go%20Forward%20to%20the%20Moon/NHQ_2019_0311_Go%20Forward%20to%20the%20Moon~large.mp4">   </iframe> */}
 
 
-
+<Footer></Footer>
 
 
 

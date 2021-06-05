@@ -2,7 +2,7 @@ import React from "react"
 import "../styles/forgot.css";
 import { Jumbotron, Row, Col, Container  } from "react-bootstrap";
 import "../styles/about.css"
-
+import Footer from "../components/footer"
 function About() {
     return (
 
@@ -69,7 +69,7 @@ function About() {
                 </Col>
             </Row>
         </Container>
-        
+        <Footer></Footer>
         </>
 
     )

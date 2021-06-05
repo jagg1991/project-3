@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import UserContext from "../store/userContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCoins } from "@fortawesome/free-solid-svg-icons"
-
+import Footer from "../components/footer"
 
 // const pass_field = document.querySelector('.pass-key');
 // const showBtn = document.querySelector('.show');
@@ -87,7 +87,8 @@ function Login() {
 
     return (
 
-        <div className="container bg-img">
+      <>
+      <div className="container bg-img">
             <div className="content">
                 <header>Login!</header>
                 <form onSubmit={(e) => handleFormSubmit(e)} action="#">
@@ -98,7 +99,7 @@ function Login() {
                     <div className="field space">
                         <span className="fa fa-lock"></span>
                         <input name="password" type="password" className="pass-key" required placeholder="Password" onChange={(e) => handleInputChange(e)} value={cred.password} />
-                        <span className="show">SHOW</span>
+                        {/* <span className="shine">show</span> */}
                     </div>
                     <div className="pass">
                         <a href="/forgot">Forgot Password?</a>
@@ -129,7 +130,8 @@ function Login() {
                 </div>
             </div>
         </div>
-
+        <Footer></Footer>
+</>
     )
 }
 

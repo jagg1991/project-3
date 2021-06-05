@@ -5,7 +5,7 @@ function NavbarTab() {
 
 
 
-        < Navbar collapseOnSelect sticky="top" bg="dark" variant="dark" expand="lg" >
+        < Navbar style={{borderStyle: "ridge", borderBottom: "solid 5px orange"}}collapseOnSelect sticky="top" bg="dark" variant="dark" expand="lg" >
 
             <Navbar.Brand href="/home">Lunar Society</Navbar.Brand>
 
@@ -22,7 +22,7 @@ function NavbarTab() {
                 <Form inline>
                 <Nav.Link style={{ float: "right" }} href="/login">Login</Nav.Link>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-success">Search</Button>
+                    <Button variant="outline-warning">Search</Button>
                
                 </Form>
             </Navbar.Collapse>

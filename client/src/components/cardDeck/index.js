@@ -3,8 +3,10 @@ import React, { useState, useContext, useEffect } from "react";
 import { Card, CardDeck, Button, Form } from "react-bootstrap"
 import UserContext from "../../store/userContext";
 import API from "../../utils/API"
+import { useHistory } from "react-router-dom";
 // import { Redirect } from "react-router-dom";
 function Deck() {
+    let history = useHistory();
     const { user } = useContext(UserContext);
 
     const [reserve, setReserve] = useState({
@@ -26,6 +28,9 @@ useEffect(() =>{
     const handleFormSubmit = event => {
         event.preventDefault();
         const { name } = event.target;
+        if(event) {
+            history.push('/congrats')
+        }
         setReserve(
             {
                 ...reserve, [name]: true
@@ -39,7 +44,7 @@ useEffect(() =>{
     return (
         <>
             
-                <CardDeck style={{ marginBottom: "20px" }}>
+                <CardDeck style={{ marginBottom: "120px" }}>
                     <Card>
                         <Card.Img variant="top" src="moon.jpg" />
                         <Card.Body>
@@ -47,7 +52,7 @@ useEffect(() =>{
                             <Card.Text>
                                 Would you like to reserve 1 acre of land?!
                                     </Card.Text>
-                            <Button name="reserve1" variant="dark" onClick={(e) => handleFormSubmit(e)} >
+                            <Button name="reserve1" variant="dark" onClick={(e) => handleFormSubmit(e) } >
                                 Reserve now!
                             </Button>
                         </Card.Body>

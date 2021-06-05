@@ -1,11 +1,11 @@
 import React from "react"
 import "../styles/forgot.css";
-
+import Footer from "../components/footer"
 
 
 function Forgot() {
     return (
-
+<>
         <div className="container">
             <div class="container d-flex justify-content-center align-items-center vh-100">
                 <div class="bg-white text-center p-5 mt-3 center">
@@ -20,7 +20,10 @@ function Forgot() {
                 </div>
             </div>
         </div>
-
+<Footer>
+  
+</Footer>
+</>
     )
 }
 
