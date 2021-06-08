@@ -11,11 +11,13 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 // db = session.getDatabase(db.getName());
 
 // Define middleware here
+
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const store = new MongoDBStore({
-    uri: 'mongodb://localhost:27017/connect_mongodb_session_test',
+    uri: 'mongodb+srv://dbLunarSociety:<Password123>@cluster0.eynmi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     collection: 'mySessions'
 });
 
