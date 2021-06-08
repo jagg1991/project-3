@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const store = new MongoDBStore({
-    uri: 'mongodb+srv://dbLunarSociety:<Password123>@cluster0.eynmi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    uri: 'mongodb://localhost:27017/connect_mongodb_session_test',
     collection: 'mySessions'
 });
 
