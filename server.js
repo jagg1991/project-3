@@ -21,16 +21,26 @@ const store = new MongoDBStore({
     collection: 'mySessions'
 });
 
-app.use(session({
-    secret: 'This is a secret',
-    cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
-    },
+// app.use(session({
+//     secret: 'This is a secret',
+//     cookie: {
+//         maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
+//     },
 
-    store: store,
-    resave: false,
-    saveUninitialized: true
-}));
+//     store: store,
+//     resave: false,
+//     saveUninitialized: true
+// }));
+
+
+const sess = {
+  secret: "Super secret secret",
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+};
+
+app.use(session(sess));
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
