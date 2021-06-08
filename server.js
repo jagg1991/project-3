@@ -5,13 +5,13 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const MongoDBStore = require('connect-mongodb-session')(session);
+const path = require("path");
 
 
 // const session = db.getMongo().startSession();
 // db = session.getDatabase(db.getName());
 
 // Define middleware here
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -34,10 +34,10 @@ const store = new MongoDBStore({
 
 
 const sess = {
-  secret: "Super secret secret",
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
+    secret: "Super secret secret",
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
 };
 
 app.use(session(sess));
