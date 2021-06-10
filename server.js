@@ -38,6 +38,8 @@ const sess = {
     resave: false,
     saveUninitialized: true,
 };
+app.use(session(sess));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -52,7 +54,7 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     app.use(express.static(path.join(__dirname, 'public')));
 }
-app.use(session(sess));
+
 
 
 
