@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
 
-    User.findById(
+    await User.findById(
         req.session.user_id
     )
         .then(userData => {
