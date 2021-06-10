@@ -33,14 +33,14 @@ app.use(session({
 }));
 
 
-const sess = {
-    secret: "Super secret secret",
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-};
+// const sess = {
+//     secret: "Super secret secret",
+//     cookie: {},
+//     resave: false,
+//     saveUninitialized: true,
+// };
 
-app.use(session(sess));
+// app.use(session(sess));
 
 // Serve up static assets(usually on heroku)
 if (process.env.NODE_ENV === 'production') {
