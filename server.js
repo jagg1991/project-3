@@ -16,7 +16,7 @@ const path = require("path");
 
 
 const store = new MongoDBStore({
-    uri: 'mongodb://localhost:27017/connect_mongodb_session_test',
+    uri: 'mongodb+srv://dbLunarSociety:Password123@cluster0.eynmi.mongodb.net/myFirstDatabase?',
     collection: 'mySessions'
 });
 
