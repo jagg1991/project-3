@@ -13,8 +13,7 @@ const path = require("path");
 
 // Define middleware here
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
 
 const store = new MongoDBStore({
     uri: 'mongodb://localhost:27017/connect_mongodb_session_test',
@@ -33,14 +32,14 @@ app.use(session({
 }));
 
 
-// const sess = {
-//     secret: "Super secret secret",
-//     cookie: {},
-//     resave: false,
-//     saveUninitialized: true,
-// };
+const sess = {
+    secret: "Super secret secret",
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+};
 
-// app.use(session(sess));
+
 
 // Serve up static assets(usually on heroku)
 if (process.env.NODE_ENV === 'production') {
@@ -52,6 +51,10 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     app.use(express.static(path.join(__dirname, 'public')));
 }
+app.use(session(sess));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 // Add routes, both API and view
 app.use(routes);
 
