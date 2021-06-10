@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect, } from "react"
 import Navbar from './components/navbar';
 import Signup from './pages/signup';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 import Login from './pages/login';
 import Forgot from './pages/forgot';
 import User from "./pages/user"
@@ -10,30 +10,30 @@ import UserContext from "./store/userContext"
 import API from "./utils/API"
 import About from "./pages/about"
 import Congrats from "./pages/congrats"
-import Play from "./components/play"
-
-const ProtectedRoute = ({ component: Component, ...rest }) => {
 
 
-  const { user } = useContext(UserContext)
-  return (
-    <Route
-      {...rest}
-      render={props => {
-        // user.isLoggedIn ?
-        // (<Component {...props} />) :
-        // (<Redirect to='/login' />)
-        if (user.isLoggedIn) {
-          (<Component {...props} />)
+// const ProtectedRoute = ({ component: Component, ...rest }) => {
 
-        }
-        else {
-          (<Redirect to='/login' />)
-        }
-      }}
-    />
-  )
-}
+
+//   const { user } = useContext(UserContext)
+//   return (
+//     <Route
+//       {...rest}
+//       render={props => {
+//         // user.isLoggedIn ?
+//         // (<Component {...props} />) :
+//         // (<Redirect to='/login' />)
+//         if (user.isLoggedIn) {
+//           (<Component {...props} />)
+
+//         }
+//         else {
+//           (<Redirect to='/login' />)
+//         }
+//       }}
+//     />
+//   )
+// }
 
 function App() {
   const [user, setUser] = useState({
@@ -86,7 +86,7 @@ function App() {
             <Route exact path="/signup" component={Signup} />
             <Route exact path={["/forgot"]} component={Forgot} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/play" component={Play} />
+
           </Switch>
 
 

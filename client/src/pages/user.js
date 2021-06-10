@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react"
-import { Card, Button, CardDeck, Row, Col, Container, Jumbotron, Modal,Nav} from "react-bootstrap"
+import { Card, Button, CardDeck, Row, Col, Container, Jumbotron, Modal } from "react-bootstrap"
 // import { Redirect } from "react-router-dom"
 import UserContext from "../store/userContext"
 import { Redirect } from "react-router-dom";
@@ -49,7 +49,7 @@ function User() {
                                 <Modal.Header className="profile" closeButton>
                                     <Modal.Title >{user.firstName} {user.lastName}</Modal.Title>
                                 </Modal.Header>
-                                <Modal.Body  className="profile">
+                                <Modal.Body className="profile">
                                     <Row>
                                         <Col xs={8}>
                                             Email: {user.email}
@@ -61,7 +61,7 @@ function User() {
                                         </ Col>
                                     </Row>
                                 </Modal.Body >
-                             
+
                                 <Modal.Body className="profile">
                                     <Row>
                                         <Col xs={8}>
@@ -110,26 +110,26 @@ function User() {
                         </Col>
                     </Jumbotron>
                 </Row>
-            <Row>
-                {/* <Col xs={4}>
+                <Row>
+                    {/* <Col xs={4}>
                 <h1 style={{color: "white", textAlign: "center"}}>Hello World</h1>
 
                 </Col>
                 <Col xs={4}></Col>
                 <Col xs={4}></Col> */}
-                <header className="getting">
-                    
-                    <Row>
-                        
-                        <Col xs={4}></Col>
-                        
-                        <Col xs={4} style={{ textAlign: "center",color: "rgb(240, 167, 32)", marginTop: "280px", height: "250px", width: "100%", }}>
-                            <h1>Are you ready to explore the moon?</h1> 
-                            <p  style={{textAlign: "Center"}}>Lets take a journey to the beyond!</p>
+                    <header className="getting">
+
+                        <Row>
+
+                            <Col xs={4}></Col>
+
+                            <Col xs={4} style={{ textAlign: "center", color: "rgb(240, 167, 32)", marginTop: "280px", height: "250px", width: "100%", }}>
+                                <h1>Are you ready to explore the moon?</h1>
+                                <p style={{ textAlign: "Center" }}>Lets take a journey to the beyond!</p>
                             </Col>
-                        <Col xs={4}></Col>
-                    </Row></header>
-            </Row>
+                            <Col xs={4}></Col>
+                        </Row></header>
+                </Row>
 
                 <Row>
 
@@ -140,7 +140,7 @@ function User() {
 
                     <div className="container">
                         <header>
-                        <h1 style={{textAlign: "center", color: "rgb(240, 167, 32)", marginTop: "150px"}}>Your Lunar land awaits!</h1>
+                            <h1 style={{ textAlign: "center", color: "rgb(240, 167, 32)", marginTop: "150px" }}>Your Lunar land awaits!</h1>
                         </header>
                         <CardDeck className="cardDeck">
                             <Card>

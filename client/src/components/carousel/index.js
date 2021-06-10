@@ -1,16 +1,16 @@
 
 import React, { useEffect, useState } from "react";
-import { Carousel, Jumbotron, Row, Card, Accordion, Modal, Button, Col, Container } from "react-bootstrap";
+import { Carousel, Row, Card, Accordion, Button, Col, Container } from "react-bootstrap";
 import coinsAPI from "../../utils/coinsAPI";
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+
 function Slides() {
 
     const [coins, setCoins] = useState([])
 
-    const [show, setShow] = useState();
+    // const [show, setShow] = useState();
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
 
     useEffect(() => {
         async function getCoins() {
