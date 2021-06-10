@@ -24,21 +24,21 @@ router.post("/", async (req, res) => {
 }
 )
 
-router.get("/", async (req, res) => {
+// router.get("/", async (req, res) => {
 
-    await User.findById(
-        req.session.user_id
-    )
-        .then(userData => {
+//     await User.findById(
+//         req.session.user_id
+//     )
+//         .then(userData => {
 
-            res.json(userData)
-        })
-        .catch(err => {
-            console.log(err)
-            res.status(500).json(err)
-        })
+//             res.json(userData)
+//         })
+//         .catch(err => {
+//             console.log(err)
+//             res.status(500).json(err)
+//         })
 
-})
+// })
 router.post("/auth", async (req, res) => {
     User.findOne(
         {
