@@ -2,23 +2,22 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const session = require('express-session');
-const app = express();
-const PORT = process.env.PORT || 3001;
+
 const MongoDBStore = require('connect-mongodb-session')(session);
+
+const PORT = process.env.PORT || 3001;
+const app = express();
 const path = require("path");
 
 
-// const session = db.getMongo().startSession();
-// db = session.getDatabase(db.getName());
 
 // Define middleware here
-
-
 
 const store = new MongoDBStore({
     uri: 'mongodb+srv://dbLunarSociety:Password123@cluster0.eynmi.mongodb.net/myFirstDatabase?',
     collection: 'mySessions'
 });
+
 
 app.use(session({
     secret: 'This is a secret',
@@ -32,16 +31,19 @@ app.use(session({
 }));
 
 
-const sess = {
-    secret: "Super secret secret",
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-};
-app.use(session(sess));
+
+// const sess = {
+//     secret: "Super secret secret",
+//     cookie: {},
+//     resave: false,
+//     saveUninitialized: true,
+// };
+// app.use(session(sess));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(routes);
 
 // Serve up static assets(usually on heroku)
 if (process.env.NODE_ENV === 'production') {
@@ -54,7 +56,6 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'public')));
 }
 
-app.use(routes);
 
 
 

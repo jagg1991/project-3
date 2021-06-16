@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Carousel, Row, Card, Accordion, Button, Col, Container } from "react-bootstrap";
+import { Carousel, Row, Card, Accordion, Button, Col, Container, Header } from "react-bootstrap";
 import coinsAPI from "../../utils/coinsAPI";
 
 function Slides() {
@@ -28,6 +28,12 @@ function Slides() {
 
 
     return (
+<>
+     
+      
+
+                        
+     
 
         <Container fluid style={{
             background: "linear-gradient(115deg, #070808 35%, #646464 65%)",
@@ -144,7 +150,7 @@ return(
 
 
         </Container>
-
+</>
 
     )
 }
